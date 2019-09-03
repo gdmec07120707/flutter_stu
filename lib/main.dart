@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'demo/MyHomePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,37 +12,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.yellow,
+        //高亮色
+        highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+        //水波纹颜色
+        splashColor: Colors.white70
       ),
       home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter"),
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: ()=>debugPrint("Navigation"),
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: ()=>debugPrint("Search"),
-            ),
-            IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: ()=>debugPrint("Setting"),
-            )
-          ],
-          elevation: 0,
-        ),
-
-        body: null
     );
   }
 }
