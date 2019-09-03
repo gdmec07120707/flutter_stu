@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_stu/demo/ListViewDemo.dart';
-import 'model/Post.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -10,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
@@ -25,8 +25,23 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("Flutter"),
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: ()=>debugPrint("Navigation"),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: ()=>debugPrint("Search"),
+            ),
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: ()=>debugPrint("Setting"),
+            )
+          ],
           elevation: 0,
         ),
+
         body: null
     );
   }
